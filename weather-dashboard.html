@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="weather-style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🌤️ Weather Dashboard</h1>
+      <div class="search-box">
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Enter city name..." 
+          autocomplete="off"
+        >
+        <button id="searchBtn">Search</button>
+        <button id="locationBtn">📍 My Location</button>
+      </div>
+    </header>
+
+    <div id="loading" class="loading" style="display: none;">
+      <p>Loading weather data...</p>
+    </div>
+
+    <div id="error" class="error" style="display: none;"></div>
+
+    <!-- Current Weather Section -->
+    <section id="currentWeather" class="weather-section" style="display: none;">
+      <div class="current-weather">
+        <div class="weather-info">
+          <h2 id="cityName"></h2>
+          <p id="date"></p>
+          <div class="temp-display">
+            <span id="temperature" class="temperature"></span>
+            <img id="weatherIcon" src="" alt="Weather icon" class="weather-icon">
+          </div>
+          <p id="description" class="description"></p>
+          <p id="feelsLike" class="feels-like"></p>
+        </div>
+        
+        <div class="details-grid">
+          <div class="detail-card">
+            <p class="detail-label">Humidity</p>
+            <p id="humidity" class="detail-value">-</p>
+          </div>
+          <div class="detail-card">
+            <p class="detail-label">Wind Speed</p>
+            <p id="windSpeed" class="detail-value">-</p>
+          </div>
+          <div class="detail-card">
+            <p class="detail-label">Pressure</p>
+            <p id="pressure" class="detail-value">-</p>
+          </div>
+          <div class="detail-card">
+            <p class="detail-label">Visibility</p>
+            <p id="visibility" class="detail-value">-</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Forecast Section -->
+    <section id="forecastSection" class="forecast-section" style="display: none;">
+      <h2>5-Day Forecast</h2>
+      <div id="forecastContainer" class="forecast-grid"></div>
+    </section>
+
+    <!-- Recent Searches -->
+    <section id="recentSection" class="recent-section">
+      <h2>Recent Searches</h2>
+      <div id="recentSearches" class="recent-list"></div>
+    </section>
+  </div>
+
+  <script src="weather-script.js"></script>
+</body>
+</html>
